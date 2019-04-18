@@ -10,7 +10,8 @@ import { Component, OnInit } from '@angular/core';
 export class WeatherComponent implements OnInit {
 
   currentWeather: CityWeather;
-  city: string = "London";
+  city: string = "";
+  lastCity: string = "";
 
   constructor(private service: WeatherService) { }
 

@@ -1,10 +1,32 @@
 
-  
-  <input #box (keyup.enter)="onEnter(box.value)">
-    <p>{{city}}</p>
+  <label for="cityinput">Show me the weather in</label>
+  <input #cityinput placeholder="type a city name" (keyup.enter)="onEnter(cityinput.value)">
     <p>{{currentWeather.id}}</p>
     <p>{{currentWeather.name}}</p>
-  <ul>
-    <li *ngFor="let w of currentWeather.weather">{{w.main}} - {{w.description}}</li>
+    
+    <table>
+        <tr>
+          <td>Temperature</td>
+          <td>{{currentWeather.main.temp}} F°</td>
+        </tr>
+        <tr>
+          <td>Maximum</td>
+          <td>{{currentWeather.main.temp_max}} F°</td>
+        </tr>
+        <tr>
+          <td>Minimum</td>
+          <td>{{currentWeather.main.temp_min}} F°</td>
+        </tr>
+        <tr>
+          <td>Humidity</td>
+          <td>{{currentWeather.main.humidity}}%</td>
+        </tr>
+        <tr>
+          <td>Pressure</td>
+          <td>{{currentWeather.main.pressure}}</td>
+        </tr>
+      </table>
+    <ul>
+    <li *ngFor="let w of currentWeather.weather">{{w.main}}</li>
   </ul>
 
