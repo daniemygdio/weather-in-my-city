@@ -1,3 +1,10 @@
-<p>
-  weather works!
-</p>
+
+  
+  <input #box (keyup.enter)="onEnter(box.value)">
+    <p>{{city}}</p>
+    <p>{{currentWeather.id}}</p>
+    <p>{{currentWeather.name}}</p>
+  <ul>
+    <li *ngFor="let w of currentWeather.weather">{{w.main}} - {{w.description}}</li>
+  </ul>
+
