@@ -12,6 +12,7 @@ export class WeatherComponent implements OnInit {
   currentWeather: CityWeather;
   city: string = "";
   lastCity: string = "";
+  isTyping: boolean = false;
 
   constructor(private service: WeatherService) { }
 
@@ -27,6 +28,10 @@ export class WeatherComponent implements OnInit {
       )
   }
 
-  onEnter(value: string) { this.city = value; this.getWeather(); }
+  keyPress(): void {
+    this.isTyping = false;
+  }
+
+  onEnter(value: string) { this.city = value; this.getWeather(); this.isTyping = true;}
 
 }
